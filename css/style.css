@@ -1,0 +1,116 @@
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+.nav{
+     display: flex;
+     justify-content: right;
+}
+
+/* Adding this to base style as we do not want any lists to have styling */
+ul {
+     list-style: none;
+ }
+ 
+ a {
+     color: #ffffff;
+     text-decoration: none;
+ }
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.header {
+     /* Understanding: we have given the header a flexbox which allows me to place all the text on the same line. Space-between lets me stick my name to the left and the nav to the right */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     background-color: #252d31;
+ }
+ 
+.header h1 {
+     font-size: 48px;
+     color: #d9dcd6;
+ }
+ 
+.nav {
+     padding-top: 15px;
+     margin-right: 20px;
+     font-size: 20px;
+ }
+ 
+.nav ul {
+          /* Understanding: new flexbox needed creating in order for me to give space between the lists */
+
+     display: flex;
+     justify-content: space-between;
+ }
+
+.nav ul li{
+
+     padding-left: 30px;
+ }
+
+
+.herobanner{
+     height: 200px;
+     background-image: url(../assets/02-hero-bg.jpg);
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     justify-content: space-between;
+ }
+
+#headline {
+     background-color: rgb(109, 247, 228);
+
+     max-width: 300px;
+     align-self: flex-end;
+     margin: 30px;
+   } 
+
+   /* understanding: when using selectors if there is a space between element names it can be anywhere inside the initial element, with the > it must be a direct child of the first named element it cannot be a grand-child etc */
+#headline > h2{
+     color: black;
+     padding: 10px;
+}
+.herobanner > img{
+
+}
