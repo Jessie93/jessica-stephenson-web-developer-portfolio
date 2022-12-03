@@ -37,7 +37,7 @@ body {
 h1 {
 font-size: 48px;
 color: rgb(27, 63, 64);
-background-color: rgba(251,239, 225, 0.8);
+background-color: rgb(251,239, 225);
 margin: 20px 0;
 padding: 0 5px 0 50px;
 }
@@ -58,8 +58,9 @@ font-size: 30px;
 
 h4{
 font-size: 30px;
-color:rgb(251,239, 225) ;
+color:rgb(251,239, 225);
 }
+
 span{
 color: rgb(251,239, 225);
 }
@@ -90,9 +91,15 @@ padding-left: 30px;
 
 .nav > ul> li> a {
 color: rgb(251,239, 225);
-text-underline-offset: 8px;
+/* text-underline-offset: 8px; */
 }
 
+.nav > ul> li> a:hover{
+  background-color: rgb(251,239, 225);
+  color:rgb(27, 63, 64);
+  padding: 3px;
+  }
+  
 
 .herobanner{
   height: 200px;
@@ -176,11 +183,6 @@ text-underline-offset: 8px;
 }
 
 
-/* #contact-section{
-display: flex;
-} */
-
-
 /******************************************
 /* PROJECT GRID
 /*******************************************/
@@ -199,30 +201,32 @@ grid-area: image;
 }
 .project1{
   grid-area: P1;
-  border: 5px solid rgb(27, 63, 64);
   background-image: url(../assets/02-portfolio-1.jpg);
 }
 .project2{
   grid-area: P2;
-  border: 5px solid rgb(27, 63, 64);
   background-image: url(../assets/02-portfolio-2.jpg);
+  
 }
 .project3{
   grid-area: P3;
-  border: 5px solid rgb(27, 63, 64);
   background-image: url(../assets/02-portfolio-3.jpg);
 }
 .project4{
   grid-area: P4;
-  border: 5px solid rgb(27, 63, 64);
   background-image: url(../assets/02-portfolio-4.jpg);
 }
 .project5{
   grid-area: P5;
-  border: 5px solid rgb(27, 63, 64);
   background-image: url(../assets/02-run-buddy.jpg);
 }
 
+/* code below shows project grid styling  */
+
+.project1, .project2, .project3, .project4, .project5{
+  border: 5px solid rgb(27, 63, 64);
+  text-decoration: none;
+}
 
 .style div{
   background-color:rgb(27, 63, 64);
@@ -231,10 +235,18 @@ grid-area: image;
   margin-bottom: 30px;
 }
 
-
 .style{
   display: flex;
   align-items: flex-end;
+  height: 100%;
+  transition: all ease-in-out;
+}
 
+#workGrid a:hover{
+  opacity: 0.5;
+  transform: scale(1.01);
+}
+:hover{
+  opacity: 1;
 }
 
