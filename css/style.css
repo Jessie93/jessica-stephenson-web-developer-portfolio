@@ -1,20 +1,15 @@
-/* Box Model Hack */
-* {
-     -moz-box-sizing: border-box;
+
+*{
+  box-sizing: border-box;
 }
 
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
-}
-
-.clear {
-	clear: both;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin: 0;
 }
 
 /******************************************
@@ -22,95 +17,224 @@
 /*******************************************/
 
 body {
-
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
 }
 
-.nav{
-     display: flex;
-     justify-content: right;
+
+.header {
+  /* Understanding: we have given the header a flexbox which allows me to place all the text on the same line. Space-between lets me stick my name to the left and the nav to the right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 0 0 ;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(27, 63, 64);
 }
 
-/* Adding this to base style as we do not want any lists to have styling */
-ul {
-     list-style: none;
- }
- 
- a {
-     color: #ffffff;
-     text-decoration: none;
- }
+h1 {
+font-size: 48px;
+color: rgb(27, 63, 64);
+background-color: rgba(251,239, 225, 0.8);
+margin: 20px 0;
+padding: 0 5px 0 50px;
+}
+
+h2{
+font-size: 50px;
+text-align: end;
+/* Width:min-content will take the minimum width of the content and apply it */
+width: min-content;
+float: right;
+padding-right: 30px;
+color: rgb(27, 63, 64);
+}
+
+h3{
+font-size: 30px;
+}
+
+h4{
+font-size: 30px;
+color:rgb(251,239, 225) ;
+}
+span{
+color: rgb(251,239, 225);
+}
+
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-
-}
-
-footer {
-
-}
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
-
-.header {
-     /* Understanding: we have given the header a flexbox which allows me to place all the text on the same line. Space-between lets me stick my name to the left and the nav to the right */
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 15px;
-     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-     background-color: #252d31;
- }
- 
-.header h1 {
-     font-size: 48px;
-     color: #d9dcd6;
- }
- 
 .nav {
-     padding-top: 15px;
-     margin-right: 20px;
-     font-size: 20px;
- }
- 
-.nav ul {
-          /* Understanding: new flexbox needed creating in order for me to give space between the lists */
+display: flex;
+justify-content: right;
+padding-top: 15px;
+margin-right: 20px;
+font-size: 20px;
+}
 
-     display: flex;
-     justify-content: space-between;
- }
+.nav ul {
+    /* Understanding: new flexbox needed creating in order for me to give space between the lists */
+display: flex;
+justify-content: space-between;
+list-style: none;
+}
 
 .nav ul li{
+padding-left: 30px;
+}
 
-     padding-left: 30px;
- }
+
+.nav > ul> li> a {
+color: rgb(251,239, 225);
+text-underline-offset: 8px;
+}
 
 
 .herobanner{
-     height: 200px;
-     background-image: url(../assets/02-hero-bg.jpg);
-     background-size: cover;
-     background-position: center;
-     display: flex;
-     justify-content: space-between;
- }
+  height: 200px;
+  background-image: url(../assets/02-hero-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+}
 
 #headline {
-     background-color: rgb(109, 247, 228);
+  background-color: rgb(27, 63, 64);
+   max-width: 300px;
+  align-self: flex-end;
+  margin: 30px;
+} 
 
-     max-width: 300px;
-     align-self: flex-end;
-     margin: 30px;
-   } 
-
-   /* understanding: when using selectors if there is a space between element names it can be anywhere inside the initial element, with the > it must be a direct child of the first named element it cannot be a grand-child etc */
-#headline > h2{
-     color: black;
-     padding: 10px;
+/* understanding: when using selectors if there is a space between element names it can be anywhere inside the initial element, with the > it must be a direct child of the first named element it cannot be a grand-child etc */
+#headline > h3{
+  color: rgb(251,239, 225);
+  padding: 5px 20px 5px 20px;
+  font-size: 25px;
 }
-.herobanner > img{
+
+
+/******************************************
+/* MAIN GRID
+/*******************************************/
+
+#mainGrid {
+  display: grid;
+  grid-template-rows: 200PX 1fr 200px;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+  "about about-content"
+  "work image"
+  "contact contact-info"
+  ;
+  gap: 40px;
+  padding: 20px;
 
 }
+
+#about {
+  grid-area: about;
+  border-right: 2px solid rgb(27, 63, 64);
+}
+
+.about-content{
+  grid-area: about-content;
+}
+
+#work {
+  grid-area: work;
+  border-right: 2px solid rgb(27, 63, 64);
+}
+
+
+#contact {
+  grid-area: contact;
+  border-right: 2px solid rgb(27, 63, 64);
+}
+/* below is code to improve look and feel of the contact info */
+.contact-info{
+  grid-area: contact-info;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+}
+
+.contact-info ul{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info > ul> li> a {
+  color: rgb(27, 63, 64);
+  text-underline-offset: 8px;
+}
+
+
+/* #contact-section{
+display: flex;
+} */
+
+
+/******************************************
+/* PROJECT GRID
+/*******************************************/
+#workGrid {
+grid-area: image;
+  display: grid;
+  grid-template-rows: 300px 300px 300px 300px;
+  grid-template-columns: 50% 1fr;
+  grid-template-areas:
+  "P1 P1"
+  "P1 P1"
+  "P2 P3"
+  "P4 P5"
+  ;
+  gap: 10px;
+}
+.project1{
+  grid-area: P1;
+  border: 5px solid rgb(27, 63, 64);
+  background-image: url(../assets/02-portfolio-1.jpg);
+}
+.project2{
+  grid-area: P2;
+  border: 5px solid rgb(27, 63, 64);
+  background-image: url(../assets/02-portfolio-2.jpg);
+}
+.project3{
+  grid-area: P3;
+  border: 5px solid rgb(27, 63, 64);
+  background-image: url(../assets/02-portfolio-3.jpg);
+}
+.project4{
+  grid-area: P4;
+  border: 5px solid rgb(27, 63, 64);
+  background-image: url(../assets/02-portfolio-4.jpg);
+}
+.project5{
+  grid-area: P5;
+  border: 5px solid rgb(27, 63, 64);
+  background-image: url(../assets/02-run-buddy.jpg);
+}
+
+
+.style div{
+  background-color:rgb(27, 63, 64);
+  width: fit-content;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+
+.style{
+  display: flex;
+  align-items: flex-end;
+
+}
+
