@@ -86,7 +86,7 @@ font-size: 20px;
 }
 
 .nav ul {
-    /* Understanding: new flexbox needed creating in order for me to give space between the lists */
+/* Understanding: new flexbox needed creating in order for me to give space between the lists */
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -102,6 +102,7 @@ text-decoration: underline;
 text-underline-offset: 8px;
 }
 
+ /* a:hover allowed me to create the roll over effect on the nav bar */
 .nav > ul> li> a:hover{
   background-color: rgb(251,239, 225);
   color:rgb(27, 63, 64);
@@ -216,6 +217,7 @@ grid-area: image;
   ;
   gap: 10px;
   object-fit: cover;
+  
 }
 .project1{
   grid-area: P1;
@@ -490,13 +492,13 @@ a:hover .overtint {
        }
     
         /* code below shows project grid styling  */    
-        .project1, .project2, .project3, .project4, .project5{
-          border: 5px solid rgb(27, 63, 64);
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          text-decoration: none;
-        }
+      .project1, .project2, .project3, .project4, .project5{
+        border: 5px solid rgb(27, 63, 64);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-decoration: none;
+       }
          
         .project-text{
           padding: 10px;
