@@ -65,6 +65,12 @@ span{
 color: rgb(251,239, 225);
 }
 
+footer{
+  background-color:rgb(27, 63, 64);
+  text-align: center;
+  padding: 10px;
+}
+
 
 /******************************************
 /* LAYOUT
@@ -91,7 +97,6 @@ padding-left: 30px;
 
 .nav > ul> li> a {
 color: rgb(251,239, 225);
-/* text-underline-offset: 8px; */
 }
 
 .nav > ul> li> a:hover{
@@ -140,12 +145,10 @@ color: rgb(251,239, 225);
   ;
   gap: 40px;
   padding: 20px;
-
 }
 
 #about {
   grid-area: about;
-  border-right: 2px solid rgb(27, 63, 64);
 }
 
 .about-content{
@@ -154,14 +157,18 @@ color: rgb(251,239, 225);
 
 #work {
   grid-area: work;
-  border-right: 2px solid rgb(27, 63, 64);
 }
 
 
 #contact {
   grid-area: contact;
-  border-right: 2px solid rgb(27, 63, 64);
 }
+
+#about, #work, #contact{
+  border-right: 4px solid rgb(27, 63, 64);
+}
+
+
 /* below is code to improve look and feel of the contact info */
 .contact-info{
   grid-area: contact-info;
@@ -180,6 +187,7 @@ color: rgb(251,239, 225);
 .contact-info > ul> li> a {
   color: rgb(27, 63, 64);
   text-underline-offset: 8px;
+  font-weight: bold;
 }
 
 
@@ -198,15 +206,16 @@ grid-area: image;
   "P4 P5"
   ;
   gap: 10px;
+  object-fit: cover;
 }
 .project1{
   grid-area: P1;
-  background-image: url(../assets/02-portfolio-1.jpg);
+  background-image: url(../assets/horieon\ 2.png);
 }
+
 .project2{
   grid-area: P2;
   background-image: url(../assets/02-portfolio-2.jpg);
-  
 }
 .project3{
   grid-area: P3;
@@ -225,6 +234,9 @@ grid-area: image;
 
 .project1, .project2, .project3, .project4, .project5{
   border: 5px solid rgb(27, 63, 64);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-decoration: none;
 }
 
@@ -242,11 +254,133 @@ grid-area: image;
   transition: all ease-in-out;
 }
 
+
+/* how to add a hover to the portfolio grid. 
+Improvements: remove the opacity and from the h4 and span*/
 #workGrid a:hover{
   opacity: 0.5;
   transform: scale(1.01);
+
+
 }
+
 :hover{
   opacity: 1;
 }
 
+
+
+
+
+
+
+
+
+
+
+ @media only screen and (max-width: 769px) {
+  
+
+
+
+/************ h1, h2, nav and herobanner  ************/
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    color: rgb(27, 63, 64);
+    background-color: rgb(251,239, 225);
+    padding: 0 155px 0 155px;
+    }
+
+  .header {
+    text-align: center;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  .nav{
+     margin: 0;
+  }
+
+  .nav ul {
+     flex-direction: row;
+     padding: 0;
+   }
+  
+   
+  h2{
+    font-size: 50px;
+    text-align: center;
+    width: max-content;
+    float: none;
+    padding-right: 0;
+    color: rgb(27, 63, 64);    
+    }
+
+/************ Main grid ************/
+
+  #mainGrid {
+     display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "about"
+    "about-content"
+    "work"
+    "image"
+    "contact"
+    "contact-info";
+    gap: 40px;
+    padding: 10px;
+  }
+  #about, #work, #contact{
+    border: none;
+    border-bottom: 4px solid rgb(27, 63, 64);
+  }
+
+/************ project grid ************/
+
+  #workGrid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "P1"
+    "P2"
+    "P3"
+    "P4"
+    "P5";
+   }
+
+    /* code below shows project grid styling  */    
+    .project1, .project2, .project3, .project4, .project5{
+      border: 5px solid rgb(27, 63, 64);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-decoration: none;
+    }
+     
+    .style div{
+      padding: 10px;
+      margin: 30px 0 15px 0;
+    }
+     
+
+/************ contact ************/
+
+
+    .contact-info{
+      text-align: left;
+      align-content: space-between;
+    }
+    
+    .contact-info ul{
+      flex-direction: column;
+    }
+    
+
+
+
+
+        }
