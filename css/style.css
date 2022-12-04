@@ -233,6 +233,8 @@ grid-area: image;
 /* code below shows project grid styling  */
 
 .project1, .project2, .project3, .project4, .project5{
+  position: relative;
+  width: 100%;
   border: 5px solid rgb(27, 63, 64);
   background-size: cover;
   background-repeat: no-repeat;
@@ -240,11 +242,16 @@ grid-area: image;
   text-decoration: none;
 }
 
-.style div{
+
+
+
+
+.project-text{
   background-color:rgb(27, 63, 64);
   width: fit-content;
   padding: 10px;
   margin-bottom: 30px;
+  z-index: 2;
 }
 
 .style{
@@ -255,20 +262,29 @@ grid-area: image;
 }
 
 
-/* how to add a hover to the portfolio grid. 
-Improvements: remove the opacity and from the h4 and span*/
+/* how to add a hover to the portfolio grid. */
+
+
+.overtint {
+  position:absolute;
+  background-color: rgba(27, 63, 64, 0.6);
+  width:100%; 
+  height:100%;
+}
+
+.project1> .overtint + div{
+  z-index: 2;
+}
+
+a:hover .overtint { 
+  opacity: 0;
+  transition-duration: .5s;
+}
+
+
 #workGrid a:hover{
-  opacity: 0.5;
   transform: scale(1.01);
-
-
 }
-
-:hover{
-  opacity: 1;
-}
-
-
 
 
 
@@ -280,8 +296,6 @@ Improvements: remove the opacity and from the h4 and span*/
 
  @media only screen and (max-width: 769px) {
   
-
-
 
 /************ h1, h2, nav and herobanner  ************/
   h1 {
@@ -361,7 +375,7 @@ Improvements: remove the opacity and from the h4 and span*/
       text-decoration: none;
     }
      
-    .style div{
+    .project-text{
       padding: 10px;
       margin: 30px 0 15px 0;
     }
@@ -377,10 +391,98 @@ Improvements: remove the opacity and from the h4 and span*/
     
     .contact-info ul{
       flex-direction: column;
+      row-gap: 15px;
     }
-    
+  }
 
 
 
 
+
+
+  @media only screen and (max-width: 979px) {
+  
+
+    /************ h1, h2, nav and herobanner  ************/
+      h1 {
+        font-size: 48px;
+        text-align: center;
+        color: rgb(27, 63, 64);
+        background-color: rgb(251,239, 225);
+        padding: 0 260px 0 260px;
         }
+    
+      .header {
+        text-align: center;
+        flex-direction: column;
+        padding: 0px;
+      }
+    
+      .nav{
+         margin: 0;
+      }
+    
+      .nav ul {
+         flex-direction: row;
+         padding: 0;
+       }
+      
+       
+      h2{
+        font-size: 50px;
+        text-align: center;
+        width: max-content;
+        float: none;
+        padding-right: 0;
+        color: rgb(27, 63, 64);    
+        }
+    
+    /************ Main grid ************/
+    
+      #mainGrid {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "about"
+        "about-content"
+        "work"
+        "image"
+        "contact"
+        "contact-info";
+        gap: 40px;
+        padding: 10px;
+      }
+      #about, #work, #contact{
+        border: none;
+        border-bottom: 4px solid rgb(27, 63, 64);
+      }
+    
+    /************ project grid ************/
+    
+      #workGrid {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "P1"
+        "P2"
+        "P3"
+        "P4"
+        "P5";
+       }
+    
+        /* code below shows project grid styling  */    
+        .project1, .project2, .project3, .project4, .project5{
+          border: 5px solid rgb(27, 63, 64);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          text-decoration: none;
+        }
+         
+        .project-text{
+          padding: 10px;
+          margin: 30px 0 15px 0;
+        }
+  }
