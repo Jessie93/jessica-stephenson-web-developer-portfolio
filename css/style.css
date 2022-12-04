@@ -94,10 +94,11 @@ font-size: 20px;
   padding-left: 30px;
 }
 
-/* .nav > ul> li> a {
+.nav > ul> li> a {
 color: rgb(251,239, 225);
+text-underline-position: below;
 text-underline-offset: 8px;
-} */
+}
 
 .nav > ul> li> a:hover{
   background-color: rgb(251,239, 225);
@@ -189,9 +190,12 @@ text-underline-offset: 8px;
 
 .contact-info > ul> li> a {
   color: rgb(27, 63, 64);
+  text-underline-position: below;
   text-underline-offset:8px;
   font-weight: bold;
 }
+
+
 
 
 /******************************************
@@ -284,16 +288,6 @@ a:hover .overtint {
 #workGrid a:hover{
   transform: scale(1.01);
 }
-
-
-
-
-
-.nav > ul> li> a {
-  color: rgb(251,239, 225);
-  text-underline-offset: 8px;
-  }
-
 
 
 
