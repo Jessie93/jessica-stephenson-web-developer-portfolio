@@ -322,7 +322,7 @@ a:hover .overtint {
   }
 
   .nav{
-     margin: 0;
+     margin-bottom: 15px;
   }
 
   .nav ul {
@@ -438,7 +438,7 @@ a:hover .overtint {
       }
     
       .nav{
-         margin: 0;
+        margin-bottom: 15px;
       }
     
       .nav ul {
