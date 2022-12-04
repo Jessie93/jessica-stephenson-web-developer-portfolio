@@ -331,6 +331,11 @@ a:hover .overtint {
     color: rgb(27, 63, 64);    
     }
 
+ #headline{
+  text-align: center;
+  flex-direction: column;
+ }
+
 /************ Main grid ************/
 
   #mainGrid {
