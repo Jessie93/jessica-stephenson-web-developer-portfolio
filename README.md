@@ -59,14 +59,11 @@ The following images show the web application's appearance and functionality at 
 
 
 
-
-
-
-
-
 # Deployed Page
 Link to deployed site 
 https://jessie93.github.io/jessica-stephenson-web-developer-portfolio/
+
+
 
 # License 
 MIT License
